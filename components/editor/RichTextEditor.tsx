@@ -70,6 +70,7 @@ export default function RichTextEditor({
       CharacterCount,
       Link.configure({ openOnClick: false, HTMLAttributes: { class: "text-journal-accent underline" } }),
     ],
+    immediatelyRender: false,
     content: (contentJson ?? content) || "",
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();

@@ -149,8 +149,9 @@ export default function EntryEditor({ entry, userId }: EntryEditorProps) {
           style={{ fontFamily: "var(--font-dm-serif), serif" }}
         />
 
-        {/* Rich text editor */}
+        {/* Rich text editor — key forces remount when template changes */}
         <RichTextEditor
+          key={template}
           content={!contentJson ? (content || TEMPLATES[template].content || undefined) : undefined}
           contentJson={contentJson ?? undefined}
           placeholder={TEMPLATES[template].placeholder}
